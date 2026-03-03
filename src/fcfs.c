@@ -46,15 +46,20 @@ int main() {
 
     // EXACT FORMAT
     printf("Waiting Time: ");
-    for (int i = 0; i < n; i++)
-        printf("P%d %d ", pid[i], wt[i]);
+for (int i = 0; i < n; i++) {
+    printf("P%d %d", pid[i], wt[i]);
+    if (i != n - 1)
+        printf(" ");
+}
 
-    printf("\nTurnaround Time: ");
-    for (int i = 0; i < n; i++)
-        printf("P%d %d ", pid[i], tat[i]);
+printf("\nTurnaround Time: ");
+for (int i = 0; i < n; i++) {
+    printf("P%d %d", pid[i], tat[i]);
+    if (i != n - 1)
+        printf(" ");
+}
 
-    printf("\nAverage Waiting Time: %.2f\n", avgWT);
-    printf("Average Turnaround Time: %.2f\n", avgTAT);
-
+printf("\nAverage Waiting Time: %.2f", avgWT);
+printf("\nAverage Turnaround Time: %.2f", avgTAT);
     return 0;
 }
