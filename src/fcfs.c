@@ -19,12 +19,11 @@ int main() {
         for (int j = 0; j < n - i - 1; j++)
             if (at[j] > at[j + 1]) {
                 int t;
-                t=at[j];  at[j]=at[j+1];  at[j+1]=t;
-                t=bt[j];  bt[j]=bt[j+1];  bt[j+1]=t;
+                t=at[j]; at[j]=at[j+1]; at[j+1]=t;
+                t=bt[j]; bt[j]=bt[j+1]; bt[j+1]=t;
                 t=pid[j]; pid[j]=pid[j+1]; pid[j+1]=t;
             }
 
-    // Proper FCFS calculation (ALWAYS)
     int cur = 0;
     for (int i = 0; i < n; i++) {
         if (cur < at[i])
@@ -44,22 +43,22 @@ int main() {
     avgWT /= n;
     avgTAT /= n;
 
-    // EXACT FORMAT
     printf("Waiting Time: ");
-for (int i = 0; i < n; i++) {
-    printf("P%d %d", pid[i], wt[i]);
-    if (i != n - 1)
-        printf(" ");
-}
+    for (int i = 0; i < n; i++) {
+        printf("P%d %d", pid[i], wt[i]);
+        if (i != n - 1)
+            printf(" ");
+    }
 
-printf("\nTurnaround Time: ");
-for (int i = 0; i < n; i++) {
-    printf("P%d %d", pid[i], tat[i]);
-    if (i != n - 1)
-        printf(" ");
-}
+    printf("\nTurnaround Time: ");
+    for (int i = 0; i < n; i++) {
+        printf("P%d %d", pid[i], tat[i]);
+        if (i != n - 1)
+            printf(" ");
+    }
 
-printf("\nAverage Waiting Time: %.2f", avgWT);
-printf("\nAverage Turnaround Time: %.2f", avgTAT);
+    printf("\nAverage Waiting Time: %.2f", avgWT);
+    printf("\nAverage Turnaround Time: %.2f", avgTAT);
+
     return 0;
 }
